@@ -1,0 +1,30 @@
+name: Reusable Workflow
+on:
+
+  workflow_call:
+
+    inputs:
+
+      app-name:
+
+        required: true
+
+        type: string
+
+    secrets:
+
+      TOKEN:
+
+        required: false
+
+ 
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - run: echo "App is ${{ inputs.app-name }}"
